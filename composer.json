@@ -1,0 +1,60 @@
+{
+  "name": "mathiasreker/php-mbstring-extension",
+  "description": "The php-mbstring-extension is a PHP library that provides support for multibyte strings that are not covered by the standard PHP string functions.",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "mb_count_chars",
+    "mb_strrev",
+    "mb_str_pad",
+    "mb_ucfirst",
+    "mb_ucwords"
+  ],
+  "authors": [
+    {
+      "name": "Mathias Reker",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://github.com/mathiasreker/php-mbstring-extension",
+  "require": {
+    "php": "^8.0",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.30",
+    "friendsofphp/php-cs-fixer": "^3.15",
+    "phpstan/phpstan": "^1.10",
+    "phpunit/phpunit": "^9.6",
+    "rector/rector": "^0.15"
+  },
+  "autoload": {
+    "files": [
+      "src/Helper/multibyteString.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MathiasReker\\PhpMbFunctions\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "phpunit/phpunit": true
+    },
+    "platform": {
+      "php": "8.0"
+    },
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "scripts": {
+    "cs-check": "./vendor/bin/php-cs-fixer fix . --dry-run --diff",
+    "cs-fix": "./vendor/bin/php-cs-fixer fix .",
+    "phpstan": "./vendor/bin/phpstan analyse src/ --level=9",
+    "rector-check": "./vendor/bin/rector process --dry-run",
+    "rector-fix": "./vendor/bin/rector process",
+    "test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php --colors=always tests/"
+  }
+}

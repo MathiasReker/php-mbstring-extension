@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    image: php-mbstring-extension:1.0.0
+    container_name: "php-mbstring-extension"
+    volumes:
+      - ./:/app
