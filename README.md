@@ -22,7 +22,7 @@ functions.
 ### Requirements
 
 - `PHP` >= 8.0
-- `ext-mbstring`
+- php-extension `ext-mbstring`
 
 ### Installation
 
@@ -39,9 +39,9 @@ functions.
 
 ## ✅ mb_count_chars
 
-mb_count_chars — Return information about characters used in a string
+mb_count_chars — Return information about characters used in a string.
 
-```
+```php
 mb_count_chars(string $string, int $mode = 0, string $encoding = 'UTF-8'): array|string
 ```
 
@@ -49,7 +49,7 @@ mb_count_chars(string $string, int $mode = 0, string $encoding = 'UTF-8'): array
 
 mb_ucwords — Uppercase the first character of each word in a string.
 
-```
+```php
 mb_ucwords(
     string $string,
     string $separators = " \t\r\n\f\v",
@@ -61,7 +61,7 @@ mb_ucwords(
 
 mb_strrev — Reverse a string.
 
-```
+```php
 mb_strrev(string $string, string $encoding = 'UTF-8'): string
 ```
 
@@ -69,7 +69,7 @@ mb_strrev(string $string, string $encoding = 'UTF-8'): string
 
 mb_str_pad — Pad a string to a certain length with another string.
 
-```
+```php
 mb_str_pad(
     string $string,
     int $length,
@@ -83,7 +83,7 @@ mb_str_pad(
 
 mb_ucfirst — Make a string's first character uppercase.
 
-```
+```php
 mb_ucfirst(string $string, string $encoding = 'UTF-8'): string
 ```
 
@@ -117,37 +117,37 @@ docker exec -it php-mbstring-extension bash
 PHP Coding Standards Fixer:
 
 ```bash
-composer run cs-fix
+composer cs-fix
 ```
 
 PHP Coding Standards Checker:
 
 ```bash
-composer run cs-check
+composer cs-check
 ```
 
 Rector Fixer:
 
 ```bash
-composer run rector-fix
+composer rector-fix
 ```
 
 Rector Checker:
 
 ```bash
-composer run rector-check
+composer rector-check
 ```
 
 PHP Stan:
 
 ```bash
-composer run phpstan
+composer phpstan
 ```
 
 Unit tests:
 
 ```bash
-composer run test
+composer test
 ```
 
 ### License

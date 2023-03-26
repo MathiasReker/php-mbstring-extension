@@ -30,7 +30,7 @@
   },
   "autoload": {
     "files": [
-      "src/Helper/multibyteString.php"
+      "src/Helper/MultibyteString.php"
     ]
   },
   "autoload-dev": {
