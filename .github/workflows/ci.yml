@@ -34,13 +34,13 @@ jobs:
         run: composer install --optimize-autoloader --prefer-dist
 
       - name: Run PHPUnit tests
-        run: composer run test
+        run: composer test
 
       - name: Run PHP CS fixer
-        run: composer run cs-check
+        run: composer cs-check
 
       - name: Run phpstan
-        run: composer run phpstan
+        run: composer phpstan
 
       - name: Run ergebnis/composer-normalize
         run: composer normalize --dry-run --no-check-lock

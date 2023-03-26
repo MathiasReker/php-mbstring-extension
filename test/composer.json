@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mathiasreker/php-mbstring-extension": "^1.0"
+    }
+}

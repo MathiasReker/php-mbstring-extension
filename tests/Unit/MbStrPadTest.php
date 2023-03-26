@@ -62,10 +62,10 @@ final class MbStrPadTest extends TestCase
         $this->expectExceptionMessage('Argument #4 ($pad_type) must be STR_PAD_RIGHT, STR_PAD_LEFT, or STR_PAD_BOTH');
 
         $input = 'Hello';
-        $padLength = 10;
-        $padString = '-';
-        $padType = 5;
+        $pad_length = 10;
+        $pad_string = '-';
+        $pad_type = 5;
 
-        mb_str_pad($input, $padLength, $padString, $padType);
+        mb_str_pad($input, $pad_length, $pad_string, $pad_type);
     }
 }
