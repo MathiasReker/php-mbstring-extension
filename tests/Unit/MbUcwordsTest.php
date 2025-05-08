@@ -25,6 +25,7 @@ final class MbUcwordsTest extends TestCase
     public function testUppercaseAllWords(): void
     {
         $this->assertEquals('The Quick Brown Fox', Mbstring::ucwords('the quick brown fox'));
+        $this->assertEquals('The QUiCK BrOwn FoX', Mbstring::ucwords('the qUiCK brOwn foX'));
     }
 
     public function testHandlesNonASCIICharacters(): void
