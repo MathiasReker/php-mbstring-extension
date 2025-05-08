@@ -65,24 +65,12 @@ final class Mbstring implements MbstringInterface
         $string = strtr($string, $map);
     }
 
-    public static function ucwords(string $string, string $encoding = 'UTF-8'): string
+    public static function ucwords(string $string, string $separators = " \t\r\n\f\v", string $encoding = 'UTF-8'): string
     {
-        $result = '';
-        $previousCharacter = ' ';
+        $escaped = preg_quote($separators, '/');
+        $pattern = '/(^|[' . $escaped . '])(\p{L})/u';
 
-        $length = mb_strlen($string, $encoding);
-        for ($i = 0; $i < $length; ++$i) {
-            $currentCharacter = mb_substr($string, $i, 1, $encoding);
-
-            if (' ' === $previousCharacter) {
-                $currentCharacter = mb_strtoupper($currentCharacter, $encoding);
-            }
-
-            $result .= $currentCharacter;
-            $previousCharacter = $currentCharacter;
-        }
-
-        return $result;
+        return preg_replace_callback($pattern, fn ($matches): string => $matches[1] . mb_strtoupper($matches[2], $encoding), $string) ?? "";
     }
 
     public static function ucfirst(string $string, string $encoding = 'UTF-8'): string

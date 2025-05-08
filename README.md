@@ -56,6 +56,7 @@ Uppercase the first character of each word in a string.
 ```php
 \MathiasReker\PhpMbFunctions\Mbstring::ucwords(
     string $string,
+    string $separators = " \t\r\n\f\v",
     string $encoding = 'UTF-8'
 ): string
 ```
